@@ -1,0 +1,66 @@
+name: Check Markdown Front-matter (MVP)
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  check-front-matter:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Get changed Markdown files
+        id: changed-files
+        run: |
+          git fetch origin ${{ github.base_ref }}
+          git diff --name-only origin/${{ github.base_ref }}...HEAD \
+            | grep '\.md$' > changed_md_files.txt || true
+
+      - name: Validate front-matter
+        run: |
+          REQUIRED_FIELDS=("docType" "product" "audience" "status")
+          FAILED=0
+
+          if [ ! -s changed_md_files.txt ]; then
+            echo "No Markdown files changed."
+            exit 0
+          fi
+
+          while read -r file; do
+            echo "🔍 Checking $file"
+
+            # Skip deleted files
+            if [ ! -f "$file" ]; then
+              continue
+            fi
+
+            # Check front-matter existence
+            if ! sed -n '1,20p' "$file" | grep -q '^---'; then
+              echo "❌ $file: missing YAML front-matter"
+              FAILED=1
+              continue
+            fi
+
+            # Extract front-matter block
+            FRONT_MATTER=$(sed -n '1,/^---$/p' "$file" | sed '1d;$d')
+
+            for field in "${REQUIRED_FIELDS[@]}"; do
+              if ! echo "$FRONT_MATTER" | grep -q "^$field:"; then
+                echo "❌ $file: missing required field '$field'"
+                FAILED=1
+              fi
+            done
+
+          done < changed_md_files.txt
+
+          if [ "$FAILED" -ne 0 ]; then
+            echo ""
+            echo "🚫 Front-matter validation failed."
+            echo "Please ensure all Markdown files include required MVP front-matter."
+            exit 1
+          fi
+
+          echo "✅ Front-matter validation passed."
