@@ -1,0 +1,225 @@
+openapi: 3.0.3
+info:
+  title: Systemlead EINV API
+  version: 1.0.0
+  description: |
+    矽聯科技（Systemlead）e首發票（EINV）對外 API 規格（SSOT）。
+    本規格已與「開立發票 API 骨架」與實際 Markdown 文件一致化。
+servers:
+  - url: https://api.systemlead.example.com
+    description: Production (placeholder)
+  - url: https://sandbox.api.systemlead.example.com
+    description: Sandbox (placeholder)
+
+tags:
+  - name: Invoice
+    description: 發票開立 / 作廢 / 折讓 / 查詢
+
+paths:
+  /api/invoice/create:
+    post:
+      tags: [Invoice]
+      summary: Create Invoice
+      operationId: createInvoice
+      security:
+        - ApiKeyAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateInvoiceRequest'
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardResponse'
+        '400':
+          description: 參數錯誤
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /api/invoice/cancel:
+    post:
+      tags: [Invoice]
+      summary: Cancel Invoice
+      operationId: cancelInvoice
+      security:
+        - ApiKeyAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CancelInvoiceRequest'
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardResponse'
+
+  /api/invoice/allowance:
+    post:
+      tags: [Invoice]
+      summary: Create Allowance
+      operationId: createAllowance
+      security:
+        - ApiKeyAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AllowanceRequest'
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardResponse'
+
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-KEY
+
+  schemas:
+    CreateInvoiceRequest:
+      type: object
+      required:
+        - InvoiceNo
+        - InvoiceDate
+        - TaxType
+        - SalesAmount
+        - TotalAmount
+        - Items
+      properties:
+        InvoiceNo:
+          type: string
+          description: 發票號碼
+        InvoiceDate:
+          type: string
+          format: date
+        BuyerIdentifier:
+          type: string
+          description: 買受人統編（B2C 可空）
+        BuyerName:
+          type: string
+        TaxType:
+          type: integer
+          enum: [1, 2, 3]
+          description: 稅別（1:應稅 2:零稅 3:免稅）
+        SalesAmount:
+          type: number
+          description: 應稅銷售額
+        ZeroTaxAmount:
+          type: number
+          description: 零稅銷售額
+        FreeTaxAmount:
+          type: number
+          description: 免稅銷售額
+        TaxAmount:
+          type: number
+        TotalAmount:
+          type: number
+        PrintMark:
+          type: boolean
+          description: 是否送列印
+        Items:
+          type: array
+          minItems: 1
+          items:
+            $ref: '#/components/schemas/InvoiceItem'
+
+    InvoiceItem:
+      type: object
+      required:
+        - ItemName
+        - ItemCount
+        - ItemPrice
+        - ItemAmount
+        - ItemTaxType
+      properties:
+        ItemName:
+          type: string
+        ItemCount:
+          type: number
+        ItemPrice:
+          type: number
+        ItemAmount:
+          type: number
+        ItemTaxType:
+          type: integer
+          enum: [1, 2, 3]
+          description: 單身稅別（1:應稅 2:零稅 3:免稅）
+
+    CancelInvoiceRequest:
+      type: object
+      required: [InvoiceNumber, CancelDate, CancelReason]
+      properties:
+        InvoiceNumber:
+          type: string
+        CancelDate:
+          type: string
+          format: date
+        CancelReason:
+          type: string
+
+    AllowanceRequest:
+      type: object
+      required: [InvoiceNumber, AllowanceDate, AllowanceAmount]
+      properties:
+        InvoiceNumber:
+          type: string
+        AllowanceDate:
+          type: string
+          format: date
+        AllowanceAmount:
+          type: number
+        AllowanceTax:
+          type: number
+        AllowanceReason:
+          type: string
+
+    StandardResponse:
+      type: object
+      required: [Status]
+      properties:
+        Status:
+          type: string
+          enum: [SUCCESS, FAILED]
+        Message:
+          type: string
+        InvoiceNumber:
+          type: string
+        AllowanceNumber:
+          type: string
+        RequestId:
+          type: string
+
+    ErrorResponse:
+      type: object
+      required: [Status, Error]
+      properties:
+        Status:
+          type: string
+          enum: [FAILED]
+        Error:
+          type: object
+          required: [Code, Message]
+          properties:
+            Code:
+              type: string
+            Message:
+              type: string
+        RequestId:
+          type: string
