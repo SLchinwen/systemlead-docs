@@ -14,6 +14,7 @@ menuPath: ["EINV", "API"]
 
 本頁為 **e首發票（EINV）API 串接**入口，提供工程師與系統整合商快速定位所需文件、規格與測試方式。  
 所有 API 行為與欄位定義以 **OpenAPI（SSOT）** 為準；規則與錯誤處理請以 **Rule / Error Catalog（SSOT）** 為準。
+「請先閱讀《使用情境總覽 scenarios.md》再選擇 API 使用方式」
 
 ---
 

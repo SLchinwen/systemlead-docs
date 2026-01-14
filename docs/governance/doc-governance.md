@@ -75,6 +75,29 @@ docs/
 5. Commit（一個 Commit 一種文件目的）
 
 ---
+### 文件 Metadata（Front-matter）最低要求（MVP）
+
+自 **2026-01-XX** 起，  
+**所有新建立或被修改的 Markdown 文件，必須於文件最上方加入 YAML front-matter，  
+以利文件治理、Metadata Routing 與 AI 正確判斷文件角色。**
+
+最低必填欄位如下：
+
+- `docType`：文件類型（openapi / rules / errors / api / manual / sop / kb / release / governance）
+- `product`：所屬產品模組（einv / mrc / shared）
+- `audience`：主要讀者（developer / merchant / cs / ops / public / internal）
+- `status`：文件狀態（draft / reviewed / approved / deprecated）
+
+#### 範例（最小可行 Front-matter）
+
+```yaml
+---
+docType: manual
+product: einv
+audience: merchant
+status: reviewed
+---
+
 
 ### API 或欄位變更（強制順序）
 
