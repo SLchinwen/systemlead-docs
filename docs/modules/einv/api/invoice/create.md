@@ -109,6 +109,15 @@ menuPath: ["EINV", "API", "Invoice", "Create"]
 - 涉及逾期、補開、重開，請搭配對應 SOP 文件
 
 ---
+## 發票開立與取號治理模式
+
+本 API 支援兩種取號治理模式：
+- 發票版（Invoice-based）
+- 訂單版（Order-based）
+
+取號責任、混合使用與切本配號規則，請參考：
+docs/rules/einv/invoice-issuance-and-numbering.md
+---
 
 ## 🔷 相關文件
 
