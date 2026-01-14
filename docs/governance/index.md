@@ -3,6 +3,7 @@
 > 本文件為 **Systemlead（矽聯科技）產品文件庫的治理入口頁**，
 > 用於統一說明「文件治理標準」、「Metadata Routing 規範」以及「AI 文件檢索與引用治理原則」，
 > 作為 **人員、工程師與 AI 系統** 共同遵循的唯一依據。
+> 本專案之 AI 使用，請參考 ai-usage.md
 
 ---
 
@@ -70,6 +71,7 @@ docs/
 * 一次 Commit 對應一種文件目的
 * 規格或邏輯變更：**一定先修改 SSOT**（OpenAPI / Rules / Errors）
 * 說明文件、Manual、KB **不得補定未在 SSOT 定義的行為**
+* 本專案之 AI 使用，請參考 ai-usage.md
 
 ---
 
@@ -157,6 +159,8 @@ Metadata Routing 用於：
 * OpenAPI 規格（`docs/openapi/`）
 * 規則文件（`docs/rules/`）
 * 錯誤碼文件（`docs/errors/`）
+
+
 
 ---
 
