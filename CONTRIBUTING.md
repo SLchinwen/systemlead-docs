@@ -75,10 +75,15 @@ AI **不是**：
 - 必須說明 AI 的使用範圍（草稿、重述、結構整理等）
 - 不得直接合併未經人工審核的 AI 產出內容
 
+建議：
+
+- 推薦使用本 Repo 的 AI prompts 範本：`docs/templates/ai-prompts.md`，該檔案包含對應於 Copilot / Copilot Chat / Editor 的推薦指令（Prompts），可直接複製使用並做為起點。
+
 相關檢核請參考：
 
 - `.github/PULL_REQUEST_TEMPLATE.md`
 - `docs/governance/ai-usage.md`
+- `docs/templates/ai-prompts.md`
 
 ---
 
@@ -99,10 +104,11 @@ Reviewer 在審核 AI 相關 PR 時，將特別關注：
   - `docs/governance/ai-usage.md`
 - 專案治理總覽：
   - `docs/governance/index.md`
+- AI prompts 範本（推薦）：
+  - `docs/templates/ai-prompts.md`  
 
 ---
 
 > **提醒：**
 > 本 CONTRIBUTING 文件的目的，是讓每一位貢獻者在使用 AI 時，
-> 都能在效率與治理之間取得平衡，確保專案能夠長期、穩定地演進。
-
+> 都能在效率與治理之間取得平衡，確保專案能夠長期、穩定地演進.
