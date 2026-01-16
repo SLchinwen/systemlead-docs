@@ -17,6 +17,13 @@ audience:
 
 ---
 
+## 發票開立相關操作
+
+- [訂單匯入開立電子發票操作手冊（訂單版）](./order-import-invoice-issuance-manual.md)  
+  說明未使用 API / FTP 串接的營業人，如何透過 Excel 匯入訂單，由系統自動取號並完成電子發票開立。
+
+---
+
 ## 營業人與基本設定
 
 - [營業人基本資料維護操作說明](./merchant-basic-profile-maintenance.md)  
