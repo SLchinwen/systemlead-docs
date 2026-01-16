@@ -21,6 +21,9 @@ audience:
 
 - [訂單匯入開立電子發票操作手冊（訂單版）](./order-import-invoice-issuance-manual.md)  
   說明未使用 API / FTP 串接的營業人，如何透過 Excel 匯入訂單，由系統自動取號並完成電子發票開立。
+- [指定日期開立電子發票操作手冊](./custom-date-invoice-issuance-manual.md)
+  說明如何透過 Excel 匯入訂單，由使用者指定發票日期後自動取號並完成電子發票開立。
+
 
 ---
 
@@ -28,6 +31,8 @@ audience:
 
 - [營業人基本資料維護操作說明](./merchant-basic-profile-maintenance.md)  
   說明營業人於開通後，如何維護公司基本資料、稅籍資訊與相關設定。
+- [手動匯入字軌號碼操作手冊](./manual-invoice-number-import.md)
+  說明營業人於配發字軌後，如何透過會下載字軌檔匯入與相關切本配號設定。
 
 ---
 
