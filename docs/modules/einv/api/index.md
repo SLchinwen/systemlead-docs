@@ -5,7 +5,7 @@ module: index
 audience: [dev, integrator]
 version: v1.0
 effectiveDate: 2026-01-14
-sourceOfTruth: [rules/rule-catalog, errors/error-catalog, openapi/openapi]
+sourceOfTruth: [rules/einv/invoice-issuance-and-numbering, openapi/openapi]
 tags: [api, integration, einv, systemlead]
 menuPath: ["EINV", "API"]
 ---
@@ -13,7 +13,7 @@ menuPath: ["EINV", "API"]
 # API 說明（e首發票 EINV）｜矽聯科技（Systemlead）
 
 本頁為 **e首發票（EINV）API 串接**入口，提供工程師與系統整合商快速定位所需文件、規格與測試方式。  
-所有 API 行為與欄位定義以 **OpenAPI（SSOT）** 為準；規則與錯誤處理請以 **Rule / Error Catalog（SSOT）** 為準。
+所有 API 行為與欄位定義以 **OpenAPI（SSOT）** 為準；規則請以 **Rules（SSOT）** 為準，錯誤碼依 OpenAPI 與實際 API 回應為準。
 「請先閱讀《使用情境總覽 scenarios.md》再選擇 API 使用方式」
 
 ---
@@ -48,10 +48,7 @@ menuPath: ["EINV", "API"]
   - [OpenAPI 索引（跨模組）](../../../openapi/index.md)
 
 - 📜 **系統規則（SSOT）**  
-  - [Rule Catalog（跨模組）](../../../rules/rule-catalog.md)
-
-- ⚠️ **錯誤碼與處理建議（SSOT）**  
-  - [Error Catalog（跨模組）](../../../errors/error-catalog.md)
+  - [e首發票規則：發票開立與取號](../../../rules/einv/invoice-issuance-and-numbering.md)
 
 - 🧭 **文件治理與 routing 規格（AI/GPTs）**  
   - [Metadata Routing 規格](../../../governance/metadata-routing.md)

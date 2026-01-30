@@ -5,7 +5,7 @@ module: invoice
 audience: [dev, integrator]
 version: v1.0
 effectiveDate: 2026-01-14
-sourceOfTruth: [openapi/openapi, rules/rule-catalog, errors/error-catalog]
+sourceOfTruth: [openapi/openapi, rules/einv/invoice-issuance-and-numbering]
 tags: [invoice, allowance, api, einv]
 menuPath: ["EINV", "API", "Invoice", "Allowance"]
 ---
@@ -76,13 +76,13 @@ menuPath: ["EINV", "API", "Invoice", "Allowance"]
 ## 🔷 常見錯誤與處理方式
 
 | 錯誤碼 | 說明 | 建議處理 |
-|---|---|---|
+| --- | --- | --- |
 | E-INV-040 | 發票不存在 | 確認 InvoiceNumber |
 | E-INV-041 | 折讓金額超過原發票 | 檢查金額計算 |
 | E-INV-042 | 發票不可折讓 | 檢查狀態與時限 |
 
 > 完整錯誤定義請參考：
-> - [Error Catalog（SSOT）](../../../errors/error-catalog.md)
+> - 錯誤碼請依 OpenAPI 與實際 API 回應為準
 
 ---
 
@@ -108,7 +108,7 @@ menuPath: ["EINV", "API", "Invoice", "Allowance"]
 - [開立發票 API](./create.md)
 - [作廢發票 API](./cancel.md)
 - [OpenAPI 規格（SSOT）](../../../openapi/index.md)
-- [系統規則（Rule Catalog）](../../../rules/rule-catalog.md)
+- [e首發票規則：發票開立與取號](../../../rules/einv/invoice-issuance-and-numbering.md)
 - [情境 SOP（退貨 / 折讓）](../../sop/index.md)
 
 ---

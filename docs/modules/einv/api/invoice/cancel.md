@@ -5,7 +5,7 @@ module: invoice
 audience: [dev, integrator]
 version: v1.0
 effectiveDate: 2026-01-14
-sourceOfTruth: [openapi/openapi, rules/rule-catalog, errors/error-catalog]
+sourceOfTruth: [openapi/openapi, rules/einv/invoice-issuance-and-numbering]
 tags: [invoice, cancel, api, einv]
 menuPath: ["EINV", "API", "Invoice", "Cancel"]
 ---
@@ -72,13 +72,13 @@ menuPath: ["EINV", "API", "Invoice", "Cancel"]
 ## 🔷 常見錯誤與處理方式
 
 | 錯誤碼 | 說明 | 建議處理 |
-|---|---|---|
+| --- | --- | --- |
 | E-INV-030 | 發票不存在 | 確認 InvoiceNumber |
 | E-INV-031 | 發票不可作廢 | 檢查狀態與時限 |
 | E-INV-032 | 重複作廢 | 避免重送請求 |
 
 > 完整錯誤定義請參考：
-> - [Error Catalog（SSOT）](../../../errors/error-catalog.md)
+> - 錯誤碼請依 OpenAPI 與實際 API 回應為準
 
 ---
 
@@ -103,7 +103,7 @@ menuPath: ["EINV", "API", "Invoice", "Cancel"]
 - [API 說明入口](../index.md)
 - [開立發票 API](./create.md)
 - [OpenAPI 規格（SSOT）](../../../openapi/index.md)
-- [系統規則（Rule Catalog）](../../../rules/rule-catalog.md)
+- [e首發票規則：發票開立與取號](../../../rules/einv/invoice-issuance-and-numbering.md)
 - [情境 SOP（作廢 / 重開）](../../sop/index.md)
 
 ---

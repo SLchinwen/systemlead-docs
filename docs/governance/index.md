@@ -13,11 +13,11 @@
 
 文件治理的核心目標為：
 
-* 建立 **單一可信文件來源（Single Source of Truth, SSOT）**
-* 避免文件重複、衝突與版本混亂
-* 確保文件可同時被「人類」與「AI 系統」正確理解與使用
-* 支援產品長期演進、模組擴充、API 文件一致化與 **AI 文件檢索（RAG）** 導入
-* 確保 AI 回答具備 **可追溯性、可稽核性與可控性**
+- 建立 **單一可信文件來源（Single Source of Truth, SSOT）**
+- 避免文件重複、衝突與版本混亂
+- 確保文件可同時被「人類」與「AI 系統」正確理解與使用
+- 支援產品長期演進、模組擴充、API 文件一致化與 **AI 文件檢索（RAG）** 導入
+- 確保 AI 回答具備 **可追溯性、可稽核性與可控性**
 
 ---
 
@@ -58,20 +58,20 @@ docs/
    └─ ai-document-retrieval-architecture.md
 ```
 
-* 新產品一律新增於 `modules/{product}/`
-* **不得** 為單一產品或專案另建獨立文件 Repo
-* 治理、AI 架構與跨模組規範 **一律集中於 `governance/`**
+- 新產品一律新增於 `modules/{product}/`
+- **不得** 為單一產品或專案另建獨立文件 Repo
+- 治理、AI 架構與跨模組規範 **一律集中於 `governance/`**
 
 ---
 
 ### 4. 文件新增與改版基本原則
 
-* 一份文件只解決「一個明確目的」
-* 不混用文件角色（SSOT ≠ 說明文件）
-* 一次 Commit 對應一種文件目的
-* 規格或邏輯變更：**一定先修改 SSOT**（OpenAPI / Rules / Errors）
-* 說明文件、Manual、KB **不得補定未在 SSOT 定義的行為**
-* 本專案之 AI 使用，請參考 ai-usage.md
+- 一份文件只解決「一個明確目的」
+- 不混用文件角色（SSOT ≠ 說明文件）
+- 一次 Commit 對應一種文件目的
+- 規格或邏輯變更：**一定先修改 SSOT**（OpenAPI / Rules / Errors）
+- 說明文件、Manual、KB **不得補定未在 SSOT 定義的行為**
+- 本專案之 AI 使用，請參考 ai-usage.md
 
 ---
 
@@ -81,10 +81,10 @@ docs/
 
 Metadata Routing 用於：
 
-* 協助人類與 AI 判斷文件角色與可信層級
-* 支援自動化文件分類、檢索與治理檢查
-* 作為 AI 文件檢索與 RAG 系統的 **前置判斷依據**
-* 避免文件被誤放、誤用或錯誤引用
+- 協助人類與 AI 判斷文件角色與可信層級
+- 支援自動化文件分類、檢索與治理檢查
+- 作為 AI 文件檢索與 RAG 系統的 **前置判斷依據**
+- 避免文件被誤放、誤用或錯誤引用
 
 ---
 
@@ -135,17 +135,17 @@ Metadata Routing 用於：
 
 ### 1. AI 可以：
 
-* 依本治理規範判斷文件可信層級
-* 僅以 SSOT 文件作為事實與規則來源
-* 透過文件檢索架構查詢「最新且核准」的文件內容
-* 回答時附帶來源路徑與版本依據
+- 依本治理規範判斷文件可信層級
+- 僅以 SSOT 文件作為事實與規則來源
+- 透過文件檢索架構查詢「最新且核准」的文件內容
+- 回答時附帶來源路徑與版本依據
 
 ### 2. AI 不可以：
 
-* 自行新增、修改或推測 SSOT 規則
-* 在 SSOT 缺失時自行補定行為
-* 混用說明文件作為事實依據
-* 未經治理層允許直接讀取非公開文件
+- 自行新增、修改或推測 SSOT 規則
+- 在 SSOT 缺失時自行補定行為
+- 混用說明文件作為事實依據
+- 未經治理層允許直接讀取非公開文件
 
 👉 AI 的檢索、引用與回答行為，**須遵循《ai-document-retrieval-architecture.md》定義之架構與稽核原則**。
 
@@ -153,12 +153,12 @@ Metadata Routing 用於：
 
 ## 四、延伸治理文件
 
-* `governance/metadata-routing.md`
-* `governance/ai-usage.md`
-* `governance/ai-document-retrieval-architecture.md`
-* OpenAPI 規格（`docs/openapi/`）
-* 規則文件（`docs/rules/`）
-* 錯誤碼文件（`docs/errors/`）
+- `governance/metadata-routing.md`
+- `governance/ai-usage.md`
+- `governance/ai-document-retrieval-architecture.md`
+- OpenAPI 規格（`docs/openapi/`）
+- 規則文件（`docs/rules/`）
+- 錯誤碼文件（`docs/errors/`）
 
 
 

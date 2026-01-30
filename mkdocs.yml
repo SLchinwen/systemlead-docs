@@ -1,0 +1,130 @@
+# MkDocs 設定｜矽聯科技產品文件中心
+# https://www.mkdocs.org/user-guide/configuration/
+
+site_name: 矽聯科技．產品文件中心
+site_description: Systemlead（矽聯科技）旗下產品與服務的官方文件中心
+site_author: 矽聯科技股份有限公司
+site_url: null  # 依實際部署設定
+
+docs_dir: docs
+strict: true
+use_directory_urls: true
+
+# 主題（可依需求改為 material / readthedocs）
+theme:
+  name: material
+  language: zh-TW
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: 切換至深色模式
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: 切換至淺色模式
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.path
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - tables
+
+# ---------------------------------------------------------------------------
+# 導航結構（首頁引導目錄）
+# 與 docs/ 結構對應，便於 MkDocs 建站與搜尋
+# ---------------------------------------------------------------------------
+nav:
+  - 首頁: index.md
+
+  # 產品模組
+  - e首發票（EINV）:
+    - 模組總覽: modules/einv/index.md
+    # API
+    - API 與串接:
+      - API 說明總覽: modules/einv/api/index.md
+      - 發票開立: modules/einv/api/invoice/create.md
+      - 發票折讓: modules/einv/api/invoice/allowance.md
+      - 發票作廢: modules/einv/api/invoice/cancel.md
+      - 情境說明: modules/einv/api/scenarios.md
+    # 操作手冊（Manual）
+    - 操作手冊（Manual）:
+      - 手冊總覽: modules/einv/manual/index.md
+      # 發票開立相關
+      - 發票開立:
+        - 訂單匯入開立（訂單版）: modules/einv/manual/order-import-invoice-issuance-manual.md
+        - 指定日期開立: modules/einv/manual/custom-date-invoice-issuance-manual.md
+        - 電子發票作廢: modules/einv/manual/invoice-void-manual.md
+      # 發票調整與下載
+      - 發票調整與下載:
+        - 發票折讓（整張/部分）: modules/einv/manual/invoice-allowance-manual.md
+        - 銷貨折讓單輸入: modules/einv/manual/sales-allowance-input-manual.md
+        - B2B 電子發票下載: modules/einv/manual/b2b-invoice-download-manual.md
+      # EC 外部訂單整合
+      - EC 外部訂單整合:
+        - 蝦皮 API 賣場授權: modules/einv/manual/shopee-api-store-auth-manual.md
+      # EC 整合（EasyStore）
+      - EC 整合（EasyStore）:
+        - EasyStore 串接設定: modules/einv/manual/easystore-connection-setup-manual.md
+        - EasyStore 自動開立: modules/einv/manual/easystore-invoice-auto-issue-manual.md
+        - EasyStore 手動開立: modules/einv/manual/easystore-invoice-manual-issue-manual.md
+        - EasyStore 手動作廢: modules/einv/manual/easystore-invoice-void-manual.md
+        - EasyStore 再次開立: modules/einv/manual/easystore-invoice-reissue-manual.md
+      # 營業人與基本設定
+      - 營業人與基本設定:
+        - 營業人基本資料維護: modules/einv/manual/merchant-basic-profile-maintenance.md
+        - 手動匯入字軌號碼: modules/einv/manual/manual-invoice-number-import.md
+        - 第三方不上傳客戶建檔: modules/einv/manual/third-party-non-upload-customer-manual.md
+    # SOP
+    - 情境 SOP:
+      - SOP 總覽: modules/einv/sop/index.md
+      - 發票開立方式選擇: modules/einv/sop/sop-inv-01-invoice-issuance-mode.md
+      - 作廢 vs 折讓判斷: modules/einv/sop/sop-inv-02-void-vs-allowance.md
+      - 字軌匯入判斷: modules/einv/sop/sop-inv-03-invoice-number-import-decision.md
+      - 客服快速導引（開通）: modules/einv/sop/cs-quick-guide-merchant-onboarding.md
+      - 營業人基本設定 SOP: modules/einv/sop/merchant-onboarding-basic-settings-sop.md
+    # KB
+    - 知識庫（KB）:
+      - KB 總覽: modules/einv/kb/index.md
+      - 補開日期限制: modules/einv/kb/kb-inv-01-backdated-invoice-limit.md
+      - 作廢 vs 折讓原因: modules/einv/kb/kb-inv-02-void-vs-allowance-why.md
+      - 字軌不足原因: modules/einv/kb/kb-inv-03-invoice-number-not-found.md
+      - 不上傳發票說明: modules/einv/kb/kb-inv-04-non-upload-invoice.md
+      - 營業人基本資料 FAQ: modules/einv/kb/merchant-basic-profile-faq.md
+    # Release
+    - 版本與產品說明: modules/einv/release/index.md
+
+  # 共用與治理
+  - 治理與規範:
+    - 治理入口: governance/index.md
+    - 文件治理: governance/doc-governance.md
+    - Metadata Routing: governance/metadata-routing.md
+    - AI 使用原則: governance/ai-usage.md
+    - AI 文件檢索架構: governance/ai-document-retrieval-architecture.md
+
+  - 規則（Rules）:
+    - e首發票發票開立與取號: rules/einv/invoice-issuance-and-numbering.md
+
+  - OpenAPI:
+    - 規格總覽: openapi/index.md
+
+  # 範本與貢獻
+  - 貢獻與範本:
+    - 文件標頭範本: templates/document-header.md
+    - AI Prompts 範本: templates/ai-prompts.md

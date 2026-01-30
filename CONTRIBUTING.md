@@ -95,17 +95,44 @@ Reviewer 在審核 AI 相關 PR 時，將特別關注：
 - 是否存在 AI 推論或語意偏移
 - 是否正確引用事實來源
 - 是否符合 AI 使用治理原則
+- **新增或大幅修改之 `.md` 是否通過 Markdown 合規檢核**（見下方「Markdown 合規檢核」）
+
+### 6.1 Markdown 合規檢核（新文件審核必查）
+
+凡 PR 涉及 **新增或大幅修改 `.md` 文件**，審核時須依 [docs/templates/Markdown_合規規範.md](docs/templates/Markdown_合規規範.md) 檢核：
+
+1. 無序清單是否全部使用 `-`（未使用 `*`）？
+2. 小節標題是否使用 `##` / `###` / `####`，而非單行粗體當標題？
+3. 「標籤＋清單」時，標籤行後是否有一空行再接清單？
+4. 表格之分隔列是否為「`|` ＋空格＋`---`＋空格＋`|`」形式（每個 `|` 右側皆有空格）？
+5. 標題與清單前後是否保留一行空白？
+
+AI 或工具生成之新文件，撰寫時應引用該規範並自檢後再提交。
 
 ---
 
-## 七、延伸與參考
+## 七、操作手冊與 _inbox 流程
+
+操作手冊之新稿或修訂稿請先放入專案根目錄之 **`_inbox`** 資料夾：
+
+1. 依 _inbox 稿件更新或新增 `docs/modules/einv/manual/` 內對應手冊。
+2. 以 Pull Request 提交審核。
+3. **審核通過、PR 合併後，請移除 _inbox 內已合併的來源檔案**，以維持 _inbox 僅存放待處理稿件。
+
+詳見：`_inbox/README.md`。
+
+---
+
+## 八、延伸與參考
 
 - AI 使用治理原則：
   - `docs/governance/ai-usage.md`
 - 專案治理總覽：
   - `docs/governance/index.md`
 - AI prompts 範本（推薦）：
-  - `docs/templates/ai-prompts.md`  
+  - `docs/templates/ai-prompts.md`
+- **Markdown 合規規範（新文件必依）**：
+  - `docs/templates/Markdown_合規規範.md`  
 
 ---
 

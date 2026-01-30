@@ -14,12 +14,12 @@
 
 在使用以下任何 Prompt 前，請確認：
 
-* 你正在編輯 `.md` 文件
-* 本 Repo 的治理原則已建立：
+- 你正在編輯 `.md` 文件
+- 本 Repo 的治理原則已建立：
 
-  * `docs/governance/ai-usage.md`
-  * `CONTRIBUTING.md`
-  * `docs/templates/document-header.md`
+  - `docs/governance/ai-usage.md`
+  - `CONTRIBUTING.md`
+  - `docs/templates/document-header.md`
 
 👉 **AI 僅為輔助者，最終內容仍需人工 Review。**
 
@@ -124,10 +124,10 @@
 
 ## 建議使用方式（實務）
 
-* ✍ 編輯文件時：用 Prompt 0 + Prompt 1
-* 🧑‍💻 客服 / 教學文件：Prompt 2
-* 👀 Review / 審核：Prompt 3、Prompt 4
-* 🧹 技術債整理：Prompt 5
+- ✍ 編輯文件時：用 Prompt 0 + Prompt 1
+- 🧑‍💻 客服 / 教學文件：Prompt 2
+- 👀 Review / 審核：Prompt 3、Prompt 4
+- 🧹 技術債整理：Prompt 5
 
 ---
 

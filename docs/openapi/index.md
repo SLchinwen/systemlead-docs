@@ -37,8 +37,7 @@ menuPath: ["OpenAPI"]
 - 規格檔：`docs/openapi/openapi.yaml`
 - 相關入口：
   - [e首發票 API 說明入口](../modules/einv/api/index.md)
-  - [系統規則目錄（Rule Catalog）](../rules/rule-catalog.md)
-  - [錯誤碼目錄（Error Catalog）](../errors/error-catalog.md)
+  - [e首發票規則：發票開立與取號（SSOT）](../rules/einv/invoice-issuance-and-numbering.md)
 
 ---
 
@@ -87,7 +86,7 @@ openapi/
 ## 與文件治理的關係
 
 | 文件類型 | 是否可定義 API |
-|---|---|
+| --- | --- |
 | OpenAPI | 可以（SSOT） |
 | API 說明（Markdown） | 不可（僅說明） |
 | SOP / Manual / KB | 不可（僅引用） |

@@ -4,8 +4,8 @@ docType: manual
 module: customer
 title: 第三方不上傳客戶建檔操作手冊
 slug: third-party-non-upload-customer-manual
-version: v1.0
-effectiveDate: 2026-01-16
+version: v1.1
+effectiveDate: 2026-01-31
 audience:
   - merchant
   - cs
@@ -93,12 +93,15 @@ A：不可以，不上傳類型僅能使用【(90) 不上傳】。
 ### Q：若重複建檔怎麼處理？
 A：請刪除多餘紀錄，保留正確且唯一的統編設定。
 
+### Q：是否支援批次匯入不上傳客戶名單？
+A：目前僅支援單筆新增，若有大量需求，建議透過 API 或洽客服支援。
+
 ---
 
 ## 八、錯誤情境與處置方式
 
 | 錯誤情境 | 建議處置 |
-|---|---|
+| --- | --- |
 | 統編輸入錯誤 | 修正統編後重新建檔 |
 | 未先建檔即匯入發票 | 先完成建檔後再匯入 |
 | 傳遞方式設定錯誤 | 修正為【(90) 不上傳】 |

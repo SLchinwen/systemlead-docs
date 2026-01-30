@@ -43,6 +43,32 @@ audience:
 
 ---
 
+## EC 外部訂單整合
+
+- [蝦皮 API 賣場授權操作手冊](./shopee-api-store-auth-manual.md)  
+  說明如何授權蝦皮賣場，讓系統自動讀取訂單與退貨資訊，並於 48 小時內自動開立電子發票、每 7 天自動開立折讓單。
+
+---
+
+## EC 整合（EasyStore）
+
+- [EasyStore 串接 e首發票系統操作手冊](./easystore-connection-setup-manual.md)  
+  說明如何將 EasyStore 商店與 e首發票串接（安裝擴充、SALT、稅金與訂單編號設定），實現訂單自動拋轉與電子發票開立。
+
+- [EasyStore 自動開立電子發票操作手冊](./easystore-invoice-auto-issue-manual.md)  
+  說明訂單付款完成後，於 EasyStore 平台自動開立電子發票的流程與注意事項。
+
+- [EasyStore 手動開立電子發票操作手冊](./easystore-invoice-manual-issue-manual.md)  
+  說明於 EasyStore 訂單明細中手動開立電子發票的步驟（自動開立未成功時之補救）。
+
+- [EasyStore 手動作廢電子發票操作手冊](./easystore-invoice-void-manual.md)  
+  說明於 EasyStore 訂單明細中手動觸發作廢電子發票的步驟與合規注意事項。
+
+- [EasyStore 再次開立電子發票操作手冊](./easystore-invoice-reissue-manual.md)  
+  說明於 EasyStore 平台針對已作廢或未成功開立之訂單再次開立電子發票的流程（含跨期處理）。
+
+---
+
 ## 營業人與基本設定
 
 - [營業人基本資料維護操作說明](./merchant-basic-profile-maintenance.md)  
