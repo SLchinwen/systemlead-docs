@@ -27,6 +27,7 @@ audience:
 | **治理** | [定價治理辦法](./pricing-governance.md) | 產品、財務、營運、管理層 | 標準服務定價框架、檢討節奏、折扣治理 |
 | **治理** | [專案報價治理辦法](./project-quoting-governance.md) | 業務、產品、財務、管理層 | 專案／混合報價原則、工時治理、報價預算書結構 |
 | **範本** | [報價預算書範本](./project-quote-budget-template.md) | 業務、客服 | 專案／混合報價之客戶端範本，可複製使用 |
+| **範本** | [客製專案報價標準範本](./custom-project-quote-standard-template.md) | 業務 | 混合報價標準結構、填寫指引、查表項目、計算原則 |
 | **引導** | [線上報價產品引導](./online-quoting-product-guide.md) | 業務、客服、客戶 | 線上首購表單步驟、費用項目、選購模組、客服話術 |
 | **QA** | [業務報價 QA](./sales-quoting-qa.md) | 業務、客服 | 報價常見問題、標準說法、競品對應 |
 | **SOP** | [業務報價 SOP](./sop-sales-quoting.md) | 業務、客服 | 標準方案報價流程、檢核清單、核准流程 |
@@ -44,6 +45,8 @@ audience:
 
 ### 業務/客服常用
 
+- [客製專案報價標準範本（含填寫指引）](./custom-project-quote-standard-template.md)  
+  混合報價標準結構、查表項目、計算原則、資料不足時詢問清單
 - [報價預算書範本（專案／混合報價）](./project-quote-budget-template.md)  
   可複製使用，含工時估算、混合報價結構、銷售說明
 - [專案報價治理辦法](./project-quoting-governance.md)  

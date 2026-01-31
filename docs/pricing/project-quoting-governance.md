@@ -130,5 +130,6 @@ tags:
 | 文件 | 用途 |
 | ---- | ---- |
 | [報價預算書範本](./project-quote-budget-template.md) | 專案／混合報價之客戶端範本 |
+| [客製專案報價標準範本](./custom-project-quote-standard-template.md) | 混合報價標準結構、填寫指引、查表與計算原則 |
 | [定價治理辦法](./pricing-governance.md) | 標準服務定價 |
 | [業務報價 SOP](./sop-sales-quoting.md) | 標準方案報價流程 |
