@@ -110,6 +110,16 @@ nav:
     # Release
     - 版本與產品說明: modules/einv/release/index.md
 
+  # 定價與報價
+  - 定價與報價:
+    - 總覽: pricing/index.md
+    - 線上報價產品引導: pricing/online-quoting-product-guide.md
+    - 定價治理辦法: pricing/pricing-governance.md
+    - 專案報價治理辦法: pricing/project-quoting-governance.md
+    - 報價預算書範本: pricing/project-quote-budget-template.md
+    - 業務報價 QA: pricing/sales-quoting-qa.md
+    - 業務報價 SOP: pricing/sop-sales-quoting.md
+
   # 共用與治理
   - 治理與規範:
     - 治理入口: governance/index.md

@@ -70,7 +70,7 @@ docs/
    - OpenAPI
    - Rule Catalog
    - Error Catalog
-3. 使用對應模板建立 Markdown
+3. 使用對應模板建立 Markdown，並依 [Markdown 合規規範](../templates/Markdown_合規規範.md) 撰寫
 4. 放入正確目錄
 5. Commit（一個 Commit 一種文件目的）
 
@@ -157,6 +157,7 @@ status: reviewed
 - [ ] 有引用對應 Rule / Error（如適用）
 - [ ] 放在正確目錄
 - [ ] 可被 AI 與人類理解
+- [ ] **Markdown 格式合規**：依 [Markdown 合規規範](../templates/Markdown_合規規範.md) 通過 markdownlint 檢核（MD025、MD022、MD032、MD036、MD060 等）
 
 ---
 
