@@ -42,6 +42,15 @@ menuPath: ["EINV", "API"]
 
 ---
 
+## 🔷 線上 Swagger UI（測試與探索）
+
+- **Staging 環境 Swagger UI**：<https://jpe-sl-einvoice-erpapi-stage.azurewebsites.net/swagger/ui/index#/>
+- 用途：線上瀏覽 API 端點、嘗試請求、驗證欄位結構
+- 環境屬性：Staging（非正式環境），供開發與整合測試使用
+- 詳細說明：[API 環境與版本參考](./api-environment-and-version.md)
+
+---
+
 ## 🔷 核心文件（SSOT / 必讀）
 
 - 🔌 **OpenAPI 規格（SSOT）**  
@@ -69,15 +78,18 @@ menuPath: ["EINV", "API"]
 ## 🔷 整合建議（工程實務）
 
 ### 1) 冪等鍵與重試策略
+
 - 對外系統需提供可追蹤的 **冪等鍵**（例如：訂單號 / 交易號）
 - 以「重試可安全」為原則設計，避免重複開立或狀態不一致
 
 ### 2) 錯誤處理
+
 - 先依 HTTP Status 判斷類型（4xx / 5xx）
 - 再依 Error Catalog 的錯誤碼與建議處理
 - 對「可重試」與「不可重試」錯誤做分流
 
 ### 3) 上傳時限與排程
+
 - 若涉及上傳期限或跨系統排程，請在 SOP 文件中建立標準流程  
 - 並於 API 文件中註明「時間相關欄位」與「例外處理」策略
 
@@ -102,4 +114,3 @@ menuPath: ["EINV", "API"]
 
 - 我遇到錯誤或開立失敗  
   → 先查 **Error Catalog**，再對照對應 **Rule Catalog**
-

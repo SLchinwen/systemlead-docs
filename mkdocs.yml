@@ -59,6 +59,7 @@ nav:
     # API
     - API 與串接:
       - API 說明總覽: modules/einv/api/index.md
+      - API 環境與版本參考: modules/einv/api/api-environment-and-version.md
       - 發票開立: modules/einv/api/invoice/create.md
       - 發票折讓: modules/einv/api/invoice/allowance.md
       - 發票作廢: modules/einv/api/invoice/cancel.md

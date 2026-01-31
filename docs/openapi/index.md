@@ -16,6 +16,7 @@ menuPath: ["OpenAPI"]
 作為所有 API 文件、工程實作、AI 文件產製的 **單一真相來源（SSOT）**。
 
 > 重要說明
+>
 > - 所有 API 行為、欄位定義、型別與限制 **一律以 OpenAPI 為準**
 > - API 說明文件、SOP、KB 僅能「引用」OpenAPI，不得自行定義或修改規格
 
@@ -37,7 +38,9 @@ menuPath: ["OpenAPI"]
 - 規格檔：`docs/openapi/openapi.yaml`
 - 相關入口：
   - [e首發票 API 說明入口](../modules/einv/api/index.md)
+  - [e首發票 API 環境與版本參考](../modules/einv/api/api-environment-and-version.md)
   - [e首發票規則：發票開立與取號（SSOT）](../rules/einv/invoice-issuance-and-numbering.md)
+- 線上 Swagger UI（Staging）：<https://jpe-sl-einvoice-erpapi-stage.azurewebsites.net/swagger/ui/index#/>
 
 ---
 
@@ -95,4 +98,3 @@ openapi/
 ---
 
 > 若 OpenAPI 與其他文件內容衝突，**一律以 OpenAPI 為準**。
-
