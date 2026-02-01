@@ -24,6 +24,8 @@ audience:
 
 | 類型 | 文件 | 適用對象 | 用途 |
 | ---- | ---- | -------- | ---- |
+| **資料** | [級距與產品代碼 (pricing-tiers.yaml)](./pricing-tiers.yaml) | 產品、財務、開發、業務 | 產品命名與級距錨點**單一維護來源** |
+| **參考** | [級距公式與維護說明](./pricing-tier-formula.md) | 產品、財務、開發 | 輸入千張算出年費、分段線性公式、維護流程 |
 | **治理** | [定價治理辦法](./pricing-governance.md) | 產品、財務、營運、管理層 | 標準服務定價框架、檢討節奏、折扣治理 |
 | **治理** | [專案報價治理辦法](./project-quoting-governance.md) | 業務、產品、財務、管理層 | 專案／混合報價原則、工時治理、報價預算書結構 |
 | **範本** | [報價預算書範本](./project-quote-budget-template.md) | 業務、客服 | 專案／混合報價之客戶端範本，可複製使用 |
@@ -62,8 +64,14 @@ audience:
 - [業務報價 SOP 流程](./sop-sales-quoting.md#二報價流程)  
   從需求確認到報價送出
 
-### 管理/產品/財務
+### 管理/產品/財務／開發
 
+- [級距公式與維護說明](./pricing-tier-formula.md)  
+  輸入張數（千張）→ 年費；分段線性內插；維護僅改 YAML
+- [級距與產品代碼資料 (pricing-tiers.yaml)](./pricing-tiers.yaml)  
+  產品 id／name、各方案錨點（千張 → 年費）單一來源
+- [產品方案標準命名](./pricing-governance.md#02-產品方案標準命名報價表單系統一致)  
+  plan_order／plan_invoice／plan_overseas／plan_kiosk 對照表
 - [定價治理目標與分層](./pricing-governance.md#31-治理目標)
 - [年度定價檢討節奏](./pricing-governance.md#33-年度定價檢討節奏建議)
 - [折扣治理規則](./pricing-governance.md#35-決策規則建議採用)

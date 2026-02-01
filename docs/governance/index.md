@@ -151,11 +151,21 @@ Metadata Routing 用於：
 
 ---
 
-## 四、延伸治理文件
+## 四、應用程式串接（AI 知識庫）
+
+若你要**將治理後的文件與定價資料串接至應用程式**（報價試算、客服機器人、Custom GPT 等），請依：
+
+- **[AI 知識庫與應用程式串接指南](./ai-knowledge-base-application-integration.md)**  
+  說明三種串接方式：**RAG／檢索 API**（問答）、**結構化資料直接讀取**（定價 YAML + 公式）、**混合**，以及定價計算與產品代碼的具體串接步驟。
+
+---
+
+## 五、延伸治理文件
 
 - `governance/metadata-routing.md`
 - `governance/ai-usage.md`
 - `governance/ai-document-retrieval-architecture.md`
+- `governance/ai-knowledge-base-application-integration.md`（應用程式串接指南）
 - OpenAPI 規格（`docs/openapi/`）
 - 規則文件（`docs/rules/`）
 - 錯誤碼文件（`docs/errors/`）

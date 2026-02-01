@@ -62,6 +62,7 @@
 - 🧭 [Metadata Routing 規格（AI / GPTs 使用）](./governance/metadata-routing.md)
 - 🤖 [AI 使用與回答治理原則](./governance/ai-usage.md)
 - 🧠 [AI 文件檢索架構（可稽核 / 可控 / 永遠讀最新）](./governance/ai-document-retrieval-architecture.md)
+- 🔌 [AI 知識庫與應用程式串接指南](./governance/ai-knowledge-base-application-integration.md)（如何把文件與定價串接到你的 App）
 - 📜 [e首發票規則：發票開立與取號（SSOT）](./rules/einv/invoice-issuance-and-numbering.md)
 - 🔌 [OpenAPI 規格總覽（SSOT）](./openapi/index.md)
 

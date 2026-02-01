@@ -114,6 +114,8 @@ nav:
   # 定價與報價
   - 定價與報價:
     - 總覽: pricing/index.md
+    - 級距公式與維護: pricing/pricing-tier-formula.md
+    - 級距與產品代碼資料: pricing/pricing-tiers.yaml
     - 線上報價產品引導: pricing/online-quoting-product-guide.md
     - 定價治理辦法: pricing/pricing-governance.md
     - 專案報價治理辦法: pricing/project-quoting-governance.md
@@ -129,6 +131,7 @@ nav:
     - Metadata Routing: governance/metadata-routing.md
     - AI 使用原則: governance/ai-usage.md
     - AI 文件檢索架構: governance/ai-document-retrieval-architecture.md
+    - AI 知識庫與應用程式串接: governance/ai-knowledge-base-application-integration.md
 
   - 規則（Rules）:
     - e首發票發票開立與取號: rules/einv/invoice-issuance-and-numbering.md

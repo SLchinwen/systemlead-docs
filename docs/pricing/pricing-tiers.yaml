@@ -1,0 +1,80 @@
+# e首發票｜定價級距與產品代碼（單一維護來源）
+# 用途：系統依「千張」輸入套用公式算出年費；文件與表單引用產品代碼與顯示名稱
+# 維護：調整級距錨點時僅改此檔，公式邏輯見 pricing-tier-formula.md
+# 具體價格以公司公告為準，本檔為計算邏輯與命名標準
+
+version: "1.0"
+effectiveDate: "2026-02-01"
+currency: TWD
+
+# --- 產品方案標準命名（報價／表單／系統一致）---
+products:
+  order_based:
+    id: plan_order
+    name: 訂單版
+    shortDesc: 以訂單為核心，e首發票負責取號與開立
+  invoice_based:
+    id: plan_invoice
+    name: 發票版
+    shortDesc: 以已取號發票為核心，上傳至加值中心
+  overseas:
+    id: plan_overseas
+    name: 境外版
+    shortDesc: 境外電商 C 類發票
+  kiosk:
+    id: plan_kiosk
+    name: 機台專用
+    shortDesc: 手持／繳款機台等設備開立
+
+# --- 年度張數級距公式：錨點表（千張 → 年費，分段線性內插）---
+# 輸入：張數（千張為單位，例 1 = 1000 張、240 = 240000 張）
+# 輸出：年費（元）。公式：相鄰錨點間線性內插；低於最低錨點取最低費；高於最高錨點取最高費
+# 非「單價×數量」，為體積折扣曲線
+
+tierAnchors:
+  # 訂單版（範例：最低 300 張 2000 元、1000 張 3000 元 … 240000 張 20000 元）
+  plan_order:
+    unit: 千張
+    anchors:
+      - sheets_k: 0.3    # 300 張
+        fee: 2000
+      - sheets_k: 1
+        fee: 3000
+      - sheets_k: 6
+        fee: 4500
+      - sheets_k: 12
+        fee: 6000
+      - sheets_k: 120
+        fee: 12000
+      - sheets_k: 240
+        fee: 20000
+      - sheets_k: 500
+        fee: 35000
+      - sheets_k: 1000
+        fee: 55000
+
+  # 發票版（錨點可依實際報價另行設定，此為示意）
+  plan_invoice:
+    unit: 千張
+    anchors:
+      - sheets_k: 2
+        fee: 3500
+      - sheets_k: 6
+        fee: 6000
+      - sheets_k: 120
+        fee: 15000
+      - sheets_k: 240
+        fee: 25000
+      - sheets_k: 360
+        fee: 32000
+
+  # 境外版、機台專用若採不同級距或「一期×6」估算，可在此擴充或另檔
+  # plan_overseas: { unit: 千張, anchors: [...] }
+  # plan_kiosk: { unit: 千張, anchors: [...] }
+
+# --- 公式說明（給系統實作）---
+# 1. 輸入 x = 張數／1000（千張）
+# 2. 取該方案 anchors 依 sheets_k 排序後，找到 x 所在區間 [a.sheets_k, b.sheets_k]
+# 3. fee = a.fee + (b.fee - a.fee) * (x - a.sheets_k) / (b.sheets_k - a.sheets_k)
+# 4. 若 x < 第一錨點 sheets_k：fee = 第一錨點 fee
+# 5. 若 x > 最後錨點 sheets_k：fee = 最後錨點 fee
