@@ -1,5 +1,0 @@
-# MkDocs 建站依賴（文件中心預覽與建置）
-# 使用方式：pip install -r requirements-docs.txt
-
-mkdocs>=1.5.0
-mkdocs-material>=9.0.0
