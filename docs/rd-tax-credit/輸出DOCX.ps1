@@ -3,7 +3,8 @@
 # 在 PowerShell 於「systemlead-docs」專案根目錄執行： .\docs\rd-tax-credit\輸出DOCX.ps1
 
 $ErrorActionPreference = "Stop"
-$root = Split-Path -Parent (Split-Path -Parent (Split-Path -Parent $PSScriptRoot))
+# Repo root = parent of "docs" (script is in docs\rd-tax-credit)
+$root = Split-Path -Parent (Split-Path -Parent $PSScriptRoot)
 $outDir = Join-Path $root "docs\rd-tax-credit\docx-output"
 if (-not (Test-Path $outDir)) { New-Item -ItemType Directory -Path $outDir | Out-Null }
 

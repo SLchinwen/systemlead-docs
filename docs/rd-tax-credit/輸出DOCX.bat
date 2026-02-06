@@ -1,10 +1,24 @@
 @echo off
 REM RD tax credit: export plan/reports to DOCX. Need Pandoc. Run from repo root.
-REM To avoid garbled text: save this file as ANSI/Big5 (Traditional Chinese) in editor.
+REM If you see garbled paths: run 輸出DOCX.ps1 in PowerShell instead, or save this file as ANSI/Big5.
 
 chcp 65001 >nul
 cd /d "%~dp0"
 cd ..\..
+
+REM Prefer PowerShell to avoid encoding issues with Chinese paths in cmd
+where powershell >nul 2>&1
+if %errorlevel% equ 0 (
+  powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0Export-Docx.ps1"
+  if errorlevel 1 goto err
+  echo.
+  echo Done. Output: %~dp0docx-output
+  powershell -NoProfile -Command "[Reflection.Assembly]::LoadWithPartialName('System.Windows.Forms')|Out-Null;[Windows.Forms.MessageBox]::Show('DOCX 已完成。輸出: ' + [Environment]::NewLine + '%~dp0docx-output','DOCX Done','OK','Information')"
+  echo.
+  pause
+  exit /b 0
+)
+
 set "OUTDIR=docs\rd-tax-credit\docx-output"
 if not exist "%OUTDIR%" mkdir "%OUTDIR%"
 
