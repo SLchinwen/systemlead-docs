@@ -1,0 +1,15 @@
+輸出DOCX.bat 使用說明
+─────────────────────
+
+若執行時出現亂碼或「不是內部或外部命令」等錯誤：
+  → 請用編輯器將「輸出DOCX.bat」另存為「ANSI」或「繁體中文 (Big5)」編碼後再執行。
+  （Cursor / VS Code：檔案 → 另存新檔 → 編碼 → 繁體中文 (Big5)）
+
+政府格式範本：
+  → 請將政府提供的「附件1-研發計畫重點摘要書(中小企業).docx」複製到
+    docs\rd-tax-credit\templates\ 目錄，並重新命名為 ref.docx
+  → 之後執行本 bat 會自動套用該格式產出計畫書。
+
+執行方式：
+  → 雙擊 輸出DOCX.bat（請在 systemlead-docs 專案根目錄下執行，或從 bat 所在位置執行）
+  → 需先安裝 Pandoc：https://pandoc.org/

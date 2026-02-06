@@ -7,9 +7,8 @@ $root = Split-Path -Parent (Split-Path -Parent (Split-Path -Parent $PSScriptRoot
 $outDir = Join-Path $root "docs\rd-tax-credit\docx-output"
 if (-not (Test-Path $outDir)) { New-Item -ItemType Directory -Path $outDir | Out-Null }
 
-# 政府格式範本（字體、標題項次）。優先使用專案 templates，其次 OneDrive 路徑。
-$refDoc = Join-Path $root "docs\rd-tax-credit\templates\附件1-研發計畫重點摘要書(中小企業).docx"
-if (-not (Test-Path $refDoc)) { $refDoc = "c:\Users\sl-ch\OneDrive - SystemLead Tech CO\文件\附件1-研發計畫重點摘要書(中小企業)(1).docx" }
+# Government format template (font, headings). Copy gov doc to templates\ref.docx.
+$refDoc = Join-Path $root "docs\rd-tax-credit\templates\ref.docx"
 
 $docs = @(
     @{
