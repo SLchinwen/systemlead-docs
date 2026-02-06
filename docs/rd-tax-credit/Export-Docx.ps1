@@ -1,34 +1,31 @@
-# RD tax credit: export plan/reports to DOCX via Pandoc.
-# Called by 輸出DOCX.bat (ASCII name avoids cmd encoding issues). Install Pandoc first.
-
+# RD tax credit: export to DOCX via Pandoc. Reads paths from docx-file-list.txt (UTF-8). ASCII-only script.
 $ErrorActionPreference = "Stop"
 $root = Split-Path -Parent (Split-Path -Parent $PSScriptRoot)
 $outDir = Join-Path $root "docs\rd-tax-credit\docx-output"
 if (-not (Test-Path $outDir)) { New-Item -ItemType Directory -Path $outDir | Out-Null }
-
 $refDoc = Join-Path $root "docs\rd-tax-credit\templates\ref.docx"
-
-$docs = @(
-    @{ In = "docs\rd-tax-credit\plans\2025\2025_年度研發投資抵減_完整計畫書.md"; Out = "2025_研發投資抵減_完整計畫書.docx"; Ref = $refDoc },
-    @{ In = "docs\rd-tax-credit\plans\2025\2025_完整附件與報告.md"; Out = "2025_研發投資抵減_完整附件與報告.docx"; Ref = $null },
-    @{ In = "docs\rd-tax-credit\execution\work-reports\2025_研發工作報告_完整版.md"; Out = "2025_研發工作報告_完整版.docx"; Ref = $null },
-    @{ In = "docs\rd-tax-credit\execution\training\2025_教育訓練計畫與參訓名冊_完整版.md"; Out = "2025_教育訓練計畫與參訓名冊_完整版.docx"; Ref = $null },
-    @{ In = "docs\rd-tax-credit\execution\work-reports\2025_monthly\2025_月工作報告彙總.md"; Out = "2025_月工作報告彙總.docx"; Ref = $null }
-)
+$listPath = Join-Path $PSScriptRoot "docx-file-list.txt"
+$listText = [System.IO.File]::ReadAllText($listPath, [System.Text.Encoding]::UTF8)
+$lines = $listText -split "`r?`n" | Where-Object { $_.Trim() -ne "" }
 
 Push-Location $root
 try {
-    foreach ($d in $docs) {
-        $inPath = Join-Path $root $d.In
-        $outPath = Join-Path $outDir $d.Out
-        if (-not (Test-Path $inPath)) { Write-Warning "Missing: $inPath"; continue }
-        Write-Host "Converting: $($d.Out)"
-        if ($d.Ref -and (Test-Path $d.Ref)) {
-            & pandoc $inPath -o $outPath --reference-doc=$d.Ref
+    foreach ($line in $lines) {
+        $parts = $line -split "\|", 3
+        if ($parts.Count -lt 2) { continue }
+        $inRel = $parts[0].Trim()
+        $outName = $parts[1].Trim()
+        $useRef = ($parts.Count -ge 3) -and ($parts[2].Trim() -eq "ref")
+        $inPath = Join-Path $root $inRel
+        $outPath = Join-Path $outDir $outName
+        if (-not (Test-Path $inPath)) { Write-Warning "Missing: $inRel"; continue }
+        Write-Host "Converting: $outName"
+        if ($useRef -and (Test-Path $refDoc)) {
+            & pandoc $inPath -o $outPath --reference-doc=$refDoc
         } else {
             & pandoc $inPath -o $outPath
         }
-        if ($LASTEXITCODE -ne 0) { throw "Pandoc failed for $($d.Out)" }
+        if ($LASTEXITCODE -ne 0) { throw "Pandoc failed for $outName" }
     }
     Write-Host "Done. Output: $outDir"
 } finally {

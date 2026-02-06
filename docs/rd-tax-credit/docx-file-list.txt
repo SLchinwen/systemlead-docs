@@ -1,0 +1,5 @@
+docs\rd-tax-credit\plans\2025\2025_年度研發投資抵減_完整計畫書.md|2025_研發投資抵減_完整計畫書.docx|ref
+docs\rd-tax-credit\plans\2025\2025_完整附件與報告.md|2025_研發投資抵減_完整附件與報告.docx|
+docs\rd-tax-credit\execution\work-reports\2025_研發工作報告_完整版.md|2025_研發工作報告_完整版.docx|
+docs\rd-tax-credit\execution\training\2025_教育訓練計畫與參訓名冊_完整版.md|2025_教育訓練計畫與參訓名冊_完整版.docx|
+docs\rd-tax-credit\execution\work-reports\2025_monthly\2025_月工作報告彙總.md|2025_月工作報告彙總.docx|
