@@ -41,10 +41,15 @@ echo.
 echo 完成。DOCX 輸出於: %OUTDIR%
 set "FULLOUT=%CD%\%OUTDIR%"
 powershell -NoProfile -Command "[Reflection.Assembly]::LoadWithPartialName('System.Windows.Forms') | Out-Null; [Windows.Forms.MessageBox]::Show('共 5 個 DOCX 已輸出至：' + [Environment]::NewLine + '%FULLOUT%', 'DOCX 轉換完成', 'OK', 'Information')"
+echo.
+pause
 exit /b 0
 
 :err
 echo.
 echo 轉換失敗。請確認已安裝 Pandoc，且於 systemlead-docs 專案根目錄執行此 bat。
+echo 若上方有紅色錯誤訊息，可依內容排查（例如：找不到 pandoc、範本路徑錯誤、檔案被占用）。
 powershell -NoProfile -Command "[Reflection.Assembly]::LoadWithPartialName('System.Windows.Forms') | Out-Null; [Windows.Forms.MessageBox]::Show('轉換失敗。' + [Environment]::NewLine + [Environment]::NewLine + '請確認已安裝 Pandoc，且於 systemlead-docs 專案根目錄執行此 bat。', 'DOCX 轉換失敗', 'OK', 'Error')"
+echo.
+pause
 exit /b 1
