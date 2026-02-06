@@ -1,6 +1,17 @@
 輸出DOCX.bat 使用說明
 ─────────────────────
 
+【範本設定】使用哪一個？如何設定？
+  • 程式使用的 Word 範本檔名：ref.docx（固定）
+  • 範本路徑：docs\rd-tax-credit\templates\ref.docx
+  • 設定方式：
+    1. 取得政府提供的計畫書格式 Word（例如「附件1-研發計畫重點摘要書(中小企業).docx」）
+    2. 複製到 docs\rd-tax-credit\templates\ 資料夾
+    3. 將該檔案重新命名為 ref.docx
+  • 套用對象：僅「第一份」轉出的 DOCX（2025_研發投資抵減_完整計畫書.docx）會套用 ref.docx；
+    其餘幾份為 Pandoc 預設樣式。若要改哪一份用範本，可編輯 docx-file-list.txt，在該行第三欄加 ref。
+  • 我沒有產生 ref.docx，需您自行放入；若未放 ref.docx，轉檔仍會成功，只是第一份為預設樣式。
+
 若執行時出現亂碼或「不是內部或外部命令」等錯誤：
   → 請用編輯器將「輸出DOCX.bat」另存為「ANSI」或「繁體中文 (Big5)」編碼後再執行。
   （Cursor / VS Code：檔案 → 另存新檔 → 編碼 → 繁體中文 (Big5)）
