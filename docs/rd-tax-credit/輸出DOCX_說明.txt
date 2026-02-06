@@ -23,3 +23,6 @@
 執行方式：
   → 雙擊 輸出DOCX.bat（請在 systemlead-docs 專案根目錄下執行，或從 bat 所在位置執行）
   → 需先安裝 Pandoc：https://pandoc.org/
+
+若出現「permission denied」或 Pandoc 寫入失敗：
+  → 請關閉 docx-output 資料夾內正在開啟的 DOCX 檔（例如用 Word 開啟的 2025_研發投資抵減_完整計畫書.docx），再重新執行 輸出DOCX.bat。

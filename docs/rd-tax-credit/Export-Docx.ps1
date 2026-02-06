@@ -25,7 +25,11 @@ try {
         } else {
             & pandoc $inPath -o $outPath
         }
-        if ($LASTEXITCODE -ne 0) { throw "Pandoc failed for $outName" }
+        if ($LASTEXITCODE -ne 0) {
+            $msg = "Pandoc failed for $outName"
+            if (Test-Path $outPath) { $msg += ". If you see 'permission denied', close this file in Word (or any app that has it open) and try again." }
+            throw $msg
+        }
     }
     Write-Host "Done. Output: $outDir"
 } finally {
