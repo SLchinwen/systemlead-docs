@@ -9,6 +9,7 @@
     3. 用 Word 開啟 ref.docx，設定「表格」樣式為有框線後儲存，轉出的 DOCX 表格才會有框線
   • 詳細步驟（給大家參照）：見 docs\rd-tax-credit\templates\範本設定說明.md
   • 套用對象：僅 docx-file-list.txt 第三欄標註 ref 的那幾份會套用 ref.docx；其餘為 Pandoc 預設樣式。
+  • 若產出字型排列與 ref 不同、或表格沒有框線：請用 Word 開啟 ref.docx，依範本設定說明「二、產出與 ref.docx 不同時」設定標題／內文樣式與表格框線後儲存，再重新執行輸出。
 
 若執行時出現亂碼或「不是內部或外部命令」等錯誤：
   → 請用編輯器將「輸出DOCX.bat」另存為「ANSI」或「繁體中文 (Big5)」編碼後再執行。
