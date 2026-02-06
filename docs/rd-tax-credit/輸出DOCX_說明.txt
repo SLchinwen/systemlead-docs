@@ -1,16 +1,14 @@
 輸出DOCX.bat 使用說明
 ─────────────────────
 
-【範本設定】使用哪一個？如何設定？
-  • 程式使用的 Word 範本檔名：ref.docx（固定）
-  • 範本路徑：docs\rd-tax-credit\templates\ref.docx
-  • 設定方式：
-    1. 取得政府提供的計畫書格式 Word（例如「附件1-研發計畫重點摘要書(中小企業).docx」）
-    2. 複製到 docs\rd-tax-credit\templates\ 資料夾
-    3. 將該檔案重新命名為 ref.docx
-  • 套用對象：僅「第一份」轉出的 DOCX（2025_研發投資抵減_完整計畫書.docx）會套用 ref.docx；
-    其餘幾份為 Pandoc 預設樣式。若要改哪一份用範本，可編輯 docx-file-list.txt，在該行第三欄加 ref。
-  • 我沒有產生 ref.docx，需您自行放入；若未放 ref.docx，轉檔仍會成功，只是第一份為預設樣式。
+【範本設定】使用哪一個？如何設定？表格框線？
+  • 程式使用的 Word 範本：docs\rd-tax-credit\templates\ref.docx（檔名固定為 ref.docx）
+  • 建議設定方式（排版、標題、縮排、表格框線）：
+    1. 執行 docs\rd-tax-credit\Setup-RefTemplate.ps1（會從您指定的附件1 路徑複製到 templates 並命名為 ref.docx；路徑可在腳本內修改）
+    2. 或手動：將「附件1-研發計畫重點摘要書(中小企業).docx」複製到 templates\ 並重新命名為 ref.docx
+    3. 用 Word 開啟 ref.docx，設定「表格」樣式為有框線後儲存，轉出的 DOCX 表格才會有框線
+  • 詳細步驟（給大家參照）：見 docs\rd-tax-credit\templates\範本設定說明.md
+  • 套用對象：僅 docx-file-list.txt 第三欄標註 ref 的那幾份會套用 ref.docx；其餘為 Pandoc 預設樣式。
 
 若執行時出現亂碼或「不是內部或外部命令」等錯誤：
   → 請用編輯器將「輸出DOCX.bat」另存為「ANSI」或「繁體中文 (Big5)」編碼後再執行。
