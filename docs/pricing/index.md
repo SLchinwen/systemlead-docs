@@ -61,6 +61,8 @@ audience:
   一句話版、30 秒版、長版說法
 - [客戶常見 Q&A](./sales-quoting-qa.md#客戶常見-qa)  
   可直接給客服或客戶的標準回答
+- [NPO 公益組織優惠申請](./sales-quoting-qa.md#三npo-公益組織優惠申請)  
+  NPO 申請網站、適用對象與聯絡方式
 - [業務報價 SOP 流程](./sop-sales-quoting.md#二報價流程)  
   從需求確認到報價送出
 
